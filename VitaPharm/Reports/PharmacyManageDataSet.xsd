@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PharmacyManageDataSet" targetNamespace="http://tempuri.org/PharmacyManageDataSet.xsd" xmlns:mstns="http://tempuri.org/PharmacyManageDataSet.xsd" xmlns="http://tempuri.org/PharmacyManageDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PharmacyManageDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="PharmacyManageDataSet" msprop:Generator_DataSetName="PharmacyManageDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReceiptDetailList" msprop:Generator_RowEvHandlerName="ReceiptDetailListRowChangeEventHandler" msprop:Generator_RowDeletedName="ReceiptDetailListRowDeleted" msprop:Generator_RowDeletingName="ReceiptDetailListRowDeleting" msprop:Generator_RowEvArgName="ReceiptDetailListRowChangeEvent" msprop:Generator_TablePropName="ReceiptDetailList" msprop:Generator_RowChangedName="ReceiptDetailListRowChanged" msprop:Generator_RowChangingName="ReceiptDetailListRowChanging" msprop:Generator_TableClassName="ReceiptDetailListDataTable" msprop:Generator_RowClassName="ReceiptDetailListRow" msprop:Generator_TableVarName="tableReceiptDetailList" msprop:Generator_UserTableName="ReceiptDetailList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GoodsReceiptDetailID_x0020_" msprop:Generator_ColumnPropNameInRow="GoodsReceiptDetailID_" msprop:Generator_ColumnPropNameInTable="GoodsReceiptDetailID_Column" msprop:Generator_ColumnVarNameInTable="columnGoodsReceiptDetailID_" msprop:Generator_UserColumnName="GoodsReceiptDetailID " type="xs:int" />
+              <xs:element name="ReceiptID" msprop:Generator_ColumnPropNameInRow="ReceiptID" msprop:Generator_ColumnPropNameInTable="ReceiptIDColumn" msprop:Generator_ColumnVarNameInTable="columnReceiptID" msprop:Generator_UserColumnName="ReceiptID" type="xs:int" minOccurs="0" />
+              <xs:element name="BatchCode" msprop:Generator_ColumnPropNameInRow="BatchCode" msprop:Generator_ColumnPropNameInTable="BatchCodeColumn" msprop:Generator_ColumnVarNameInTable="columnBatchCode" msprop:Generator_UserColumnName="BatchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CommodityName" msprop:Generator_ColumnPropNameInRow="CommodityName" msprop:Generator_ColumnPropNameInTable="CommodityNameColumn" msprop:Generator_ColumnVarNameInTable="columnCommodityName" msprop:Generator_UserColumnName="CommodityName" type="xs:string" minOccurs="0" />
+              <xs:element name="MfgDate" msprop:Generator_ColumnPropNameInRow="MfgDate" msprop:Generator_ColumnPropNameInTable="MfgDateColumn" msprop:Generator_ColumnVarNameInTable="columnMfgDate" msprop:Generator_UserColumnName="MfgDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpDate" msprop:Generator_ColumnPropNameInRow="ExpDate" msprop:Generator_ColumnPropNameInTable="ExpDateColumn" msprop:Generator_ColumnVarNameInTable="columnExpDate" msprop:Generator_UserColumnName="ExpDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PurchasePrice" msprop:Generator_ColumnPropNameInRow="PurchasePrice" msprop:Generator_ColumnPropNameInTable="PurchasePriceColumn" msprop:Generator_ColumnVarNameInTable="columnPurchasePrice" msprop:Generator_UserColumnName="PurchasePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReceiptList" msprop:Generator_RowEvHandlerName="ReceiptListRowChangeEventHandler" msprop:Generator_RowDeletedName="ReceiptListRowDeleted" msprop:Generator_RowDeletingName="ReceiptListRowDeleting" msprop:Generator_RowEvArgName="ReceiptListRowChangeEvent" msprop:Generator_TablePropName="ReceiptList" msprop:Generator_RowChangedName="ReceiptListRowChanged" msprop:Generator_RowChangingName="ReceiptListRowChanging" msprop:Generator_TableClassName="ReceiptListDataTable" msprop:Generator_RowClassName="ReceiptListRow" msprop:Generator_TableVarName="tableReceiptList" msprop:Generator_UserTableName="ReceiptList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReceiptID" msprop:Generator_ColumnPropNameInRow="ReceiptID" msprop:Generator_ColumnPropNameInTable="ReceiptIDColumn" msprop:Generator_ColumnVarNameInTable="columnReceiptID" msprop:Generator_UserColumnName="ReceiptID" type="xs:int" minOccurs="0" />
+              <xs:element name="ReceiptCode" msprop:Generator_ColumnPropNameInRow="ReceiptCode" msprop:Generator_ColumnPropNameInTable="ReceiptCodeColumn" msprop:Generator_ColumnVarNameInTable="columnReceiptCode" msprop:Generator_UserColumnName="ReceiptCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ReceiptDate" msprop:Generator_ColumnPropNameInRow="ReceiptDate" msprop:Generator_ColumnPropNameInTable="ReceiptDateColumn" msprop:Generator_ColumnVarNameInTable="columnReceiptDate" msprop:Generator_UserColumnName="ReceiptDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_UserColumnName="SupplierName" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeeName" msprop:Generator_ColumnPropNameInRow="EmployeeName" msprop:Generator_ColumnPropNameInTable="EmployeeNameColumn" msprop:Generator_ColumnVarNameInTable="columnEmployeeName" msprop:Generator_UserColumnName="EmployeeName" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_UserColumnName="Note" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReceiptDetailList" />
+      <xs:field xpath="mstns:GoodsReceiptDetailID_x0020_" />
+    </xs:unique>
+    <xs:unique name="ReceiptListKey1">
+      <xs:selector xpath=".//mstns:ReceiptList" />
+      <xs:field xpath="mstns:ReceiptID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="ReceiptList_ReceiptDetailList" msdata:parent="ReceiptList" msdata:child="ReceiptDetailList" msdata:parentkey="ReceiptID" msdata:childkey="ReceiptID" msprop:Generator_UserParentTable="ReceiptList" msprop:Generator_UserChildTable="ReceiptDetailList" msprop:Generator_RelationVarName="relationReceiptList_ReceiptDetailList" msprop:Generator_UserRelationName="ReceiptList_ReceiptDetailList" msprop:Generator_ChildPropName="GetReceiptDetailListRows" msprop:Generator_ParentPropName="ReceiptListRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

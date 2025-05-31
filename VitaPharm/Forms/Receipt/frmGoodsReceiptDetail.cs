@@ -1,7 +1,9 @@
-﻿using System.Data;
-using VitaPharm.Data;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using Microsoft.EntityFrameworkCore;
-using DevExpress.XtraEditors;
+using System.Data;
+using VitaPharm.Data;
+using VitaPharm.Reports;
 
 namespace VitaPharm.Forms
 {
@@ -80,7 +82,60 @@ namespace VitaPharm.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            var ds = new PharmacyManageDataSet();
 
+            var dtMaster = ds.ReceiptList;
+            var dtDetail = ds.ReceiptDetailList;
+
+            var receipt = context.GoodsReceipts
+                .Include(r => r.Employee)
+                .FirstOrDefault(r => r.ReceiptID == receiptId);
+
+            var details = context.GoodsReceiptDetails
+                .Include(d => d.Batch)
+                .ThenInclude(b => b.Commodity)
+                .Where(d => d.GoodsReceipt.ReceiptID == receiptId)
+                .ToList();
+
+            dtMaster.Rows.Add(
+                receipt.ReceiptID,
+                receipt.ReceiptCode,
+                receipt.ReceiptDate,
+                receipt.SupplierName,
+                receipt.Employee?.EmployeeName ?? "",
+                receipt.Note
+            );
+
+            foreach (var d in details)
+            {
+                dtDetail.Rows.Add(
+                    d.GoodsReceiptDetailID,
+                    d.GoodsReceipt.ReceiptID,
+                    d.Batch.BatchCode,
+                    d.Batch.Commodity.CommodityName,
+                    d.Batch.MfgDate,
+                    d.Batch.ExpDate,
+                    d.Batch.PurchasePrice,
+                    d.QtyIn,
+                    d.QtyIn * d.Batch.PurchasePrice
+                );
+            }
+
+            var report = new rptReceiptDetail();
+            report.DataSource = ds;
+            report.DataMember = "GoodsReceipt";
+
+            report.Parameters["pReceiptCode"].Value = receipt.ReceiptCode;
+            report.Parameters["pReceiptDate"].Value = receipt.ReceiptDate;
+            report.Parameters["pSupplierName"].Value = receipt.SupplierName;
+            report.Parameters["pEmployeeName"].Value = receipt.Employee?.EmployeeName ?? "";
+            report.Parameters["pNote"].Value = receipt.Note;
+
+            foreach (var param in report.Parameters)
+                param.Visible = false;
+
+            ReportPrintTool printTool = new ReportPrintTool(report); 
+            printTool.ShowPreviewDialog();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
